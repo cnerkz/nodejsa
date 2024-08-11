@@ -156,7 +156,7 @@ bot.onText(/\/buy (\d+)/, async (msg, match) => {
             })
         );
     } catch (error) {
-        bot.sendMessage(chatId, 'Bir hata oluştu. Lütfen tekrar deneyin.');
+        bot.sendMessage(chatId, error);
     }
 });
 
