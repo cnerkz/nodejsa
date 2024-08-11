@@ -294,7 +294,7 @@ async function newEmail() {
         }));
 
        browser = await puppeteer.launch({
-            headless: false,
+            headless: true,
             slowMo: 40,
             args: ['--start-maximized', "--incognito",
                 '--no-sandbox',
