@@ -122,7 +122,6 @@ bot.onText(/\/addcredit (\d+) (\d+)/, async (msg, match) => {
     // Hedef kullanıcıya bilgi mesajı
     bot.sendMessage(targetUserId, `Hesabınıza ${creditAmount} kredi eklendi. Mevcut krediniz: ${user.credit}`);
 });
-
 // Kredi ile görev satın alma komutu
 bot.onText(/\/buy (\d+)/, async (msg, match) => {
     const chatId = msg.chat.id;
@@ -142,16 +141,21 @@ bot.onText(/\/buy (\d+)/, async (msg, match) => {
         return;
     }
 
-  
-
-    for (let i = 0; i < numberOfAccounts; i++) {
-         const sentMessage = await bot.sendMessage(chatId, 'Yemeksepeti hesabı oluşturuluyor. Lütfen bekleyin...');
-        const email = await newEmail();  // Hesap oluşturma fonksiyonu
-        await bot.editMessageText(`Yeni hesap oluşturuldu: <code>${email}</code>`, {
-          chat_id: chatId,
-          message_id: sentMessage.message_id,
-          parse_mode: 'HTML' // parse_mode burada belirtilmeli
-      });
+    // Asenkron olarak işlemleri paralel yapıyoruz
+    try {
+        await Promise.all(
+            Array.from({ length: numberOfAccounts }).map(async (_, i) => {
+                const sentMessage = await bot.sendMessage(chatId, `Yemeksepeti hesabı oluşturuluyor (${i + 1}/${numberOfAccounts}). Lütfen bekleyin...`);
+                const email = await newEmail();  // Hesap oluşturma fonksiyonu
+                await bot.editMessageText(`Yeni hesap oluşturuldu: <code>${email}</code>`, {
+                    chat_id: chatId,
+                    message_id: sentMessage.message_id,
+                    parse_mode: 'HTML'
+                });
+            })
+        );
+    } catch (error) {
+        bot.sendMessage(chatId, 'Bir hata oluştu. Lütfen tekrar deneyin.');
     }
 });
 
@@ -316,7 +320,7 @@ async function newEmail() {
             await page.click('text=Hepsini Kabul Et');
         } catch (error) {
         }
-
+        console.log("hop")
         await page.waitForSelector('text=Kayıt Ol', { visible: true, timeout: 60000 });
         await page.click('text=Kayıt Ol');
 
@@ -387,6 +391,8 @@ async function newEmail() {
 
     } catch (error) {
       await browser.close();
+      console.log("hata")
+
       return await newEmail();
     }
 }
