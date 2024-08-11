@@ -271,6 +271,7 @@ async function getCode(chatId) {
 
 // Görev oluşturma fonksiyonu
 async function newEmail() {
+    console.log("newEmail fonksiyonu çağrıldı"); 
   let browser; //
     try {
         const proxy = proxyList[0].split(":"); // İlk proxyyi kullan
@@ -294,6 +295,7 @@ async function newEmail() {
         }));
 
        browser = await puppeteer.launch({
+        
             headless: true,
             slowMo: 40,
             args: ['--start-maximized', "--incognito",
