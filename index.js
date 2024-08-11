@@ -387,8 +387,9 @@ async function newEmail() {
         return mail; // E-posta adresini döndür
 
     } catch (error) {
+        console.log("hata")
       await browser.close();
-      console.log("hata")
+
 
       return await newEmail();
     }
