@@ -314,7 +314,7 @@ async function newEmail() {
             await page.solveRecaptchas();
             await page.waitForNavigation();
         }
-
+        console.log("açtım")
         try {
  
             await page.waitForSelector('text=Hepsini Kabul Et', { visible: true, timeout: 5000 });
@@ -331,7 +331,7 @@ async function newEmail() {
         const { data } = await axios.get(`https://api.kopeechka.store/mailbox-get-email?site=yemeksepeti.com&mail_type=hotmail.com&token=${mailrutoken}&password=0&regex=&subject=&investor=&soft=&type=json&api=2.0`);
         const mail = data.mail;
         const mailId = data.id;
-
+        console.log("geldim bura kadar")
         await page.waitForSelector('[data-testid="email-view-text-field"]');
         await page.focus('[data-testid="email-view-text-field"]');
         await page.keyboard.type(mail);
@@ -358,7 +358,7 @@ async function newEmail() {
     await page.waitForSelector('[data-testid="registration-view-field-birthdate"]');
     await page.click('[data-testid="registration-view-field-birthdate"]');
 
-
+        console.log("olmak üzere")
         await page.waitForSelector('.bds-c-checkbox__icon');
         await page.click('.bds-c-checkbox__icon');
 
