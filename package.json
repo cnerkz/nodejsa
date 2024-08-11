@@ -1,7 +1,7 @@
 {
   "description": "",
   "scripts": {
-    "start": "node index2.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "axios": "^0.27.2",
