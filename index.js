@@ -266,9 +266,7 @@ async function getCode(chatId) {
 // Görev oluşturma fonksiyonu
 async function newEmail() {
     console.log("newEmail fonksiyonu çağrıldı"); 
-  let browser; //
-    try {
-        const proxy = proxyList[0].split(":"); // İlk proxyyi kullan
+    const proxy = proxyList[0].split(":"); // İlk proxyyi kullan
         const [host, port, username, password] = proxy;
         puppeteer.use(
           RecaptchaPlugin({
@@ -288,7 +286,7 @@ async function newEmail() {
             }
         }));
 
-       browser = await puppeteer.launch({
+     const  browser = await puppeteer.launch({
         
             headless: true,
             slowMo: 40,
@@ -297,6 +295,8 @@ async function newEmail() {
                 '--disable-setuid-sandbox'
         ],
         });
+    try {
+    
 
         let [page] = await browser.pages();
         await page.authenticate({ username, password });
