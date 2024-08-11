@@ -1,33 +1,18 @@
 {
   "description": "",
+  "scripts": {
+    "start": "node index2.js"
+  },
   "dependencies": {
-    "@fingerprintjs/fingerprintjs-pro": "^3.9.3",
     "axios": "^0.27.2",
     "chance": "^1.1.11",
     "cheerio": "^1.0.0",
-    "fingerprints": "^0.0.1",
-    "fs": "^0.0.1-security",
-    "geckodriver": "^4.4.0",
-    "https-proxy-agent": "^7.0.4",
-    "jsdom": "^24.0.0",
     "mongoose": "^8.5.0",
     "node-telegram-bot-api": "^0.64.0",
-    "os": "^0.1.2",
-    "playwright": "^1.44.0",
-    "playwright-extra": "^4.3.6",
-    "proxy-agent": "^6.4.0",
     "puppeteer": "^22.0.0",
     "puppeteer-extra": "^3.3.6",
-    "puppeteer-extra-plugin-anonymize-ua": "^2.4.6",
     "puppeteer-extra-plugin-proxy": "^1.0.2",
     "puppeteer-extra-plugin-recaptcha": "^3.6.8",
-    "puppeteer-extra-plugin-stealth": "^2.11.2",
-    "puppeteer-real-browser": "^1.2.31",
-    "puppeteer-with-fingerprints": "^1.4.9",
-    "request-promise": "^4.2.6",
-    "selenium-webdriver": "^4.20.0",
-    "telegraf": "^4.15.3",
-    "webdriverio": "^8.36.1",
-    "with": "^7.0.2"
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
   }
 }
