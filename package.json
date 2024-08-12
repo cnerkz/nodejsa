@@ -1,7 +1,8 @@
 {
   "description": "",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+     "heroku-postbuild": "npm install puppeteer --unsafe-perm=true --allow-root"
   },
   "dependencies": {
     "axios": "^0.27.2",
