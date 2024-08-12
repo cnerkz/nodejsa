@@ -2,7 +2,7 @@
   "description": "",
   "scripts": {
     "start": "node index.js",
-    "heroku-postbuild": "npx puppeteer install --unsafe-perm=true --allow-root"},
+     "heroku-postbuild": "./install_puppeteer.sh"},
   "dependencies": {
     "axios": "^0.27.2",
     "chance": "^1.1.11",
