@@ -287,7 +287,7 @@ async function newEmail() {
         }));
 
      const  browser = await puppeteer.launch({
-        
+        executablePath: process.env.CHROMIUM_PATH,
             headless: true,
             slowMo: 40,
             args: ['--start-maximized', "--incognito",
