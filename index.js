@@ -454,3 +454,15 @@ function randomDate(start, end) {
     const year = randomDate.getFullYear();
     return `${day}.${month}.${year}`;
 }
+const express = require('express');
+const app = express();
+
+const PORT = process.env.PORT || 3000;
+
+app.get('/', (req, res) => {
+    res.send('Bot çalışıyor');
+});
+
+app.listen(PORT, () => {
+    console.log(`Sunucu ${PORT} portunda çalışıyor`);
+});
