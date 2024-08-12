@@ -454,3 +454,18 @@ function randomDate(start, end) {
     const year = randomDate.getFullYear();
     return `${day}.${month}.${year}`;
 }
+const express = require('express');
+const app = express();
+
+// Heroku'nun dinlemesi gereken portu ayarla
+const PORT = process.env.PORT || 3000;
+
+// Basit bir root endpoint
+app.get('/', (req, res) => {
+    res.send('Bot is running!');
+});
+
+// Sunucuyu başlat
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
