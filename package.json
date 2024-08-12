@@ -1,8 +1,6 @@
 {
   "description": "",
-  "engines": {
-    "node": "18.x"
-  },
+
   "scripts": {
     "start": "node index.js",
      "heroku-postbuild": "npx install puppeteer"},
