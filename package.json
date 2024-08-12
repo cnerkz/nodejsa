@@ -2,7 +2,7 @@
   "description": "",
   "scripts": {
     "start": "node index.js",
-    "heroku-postbuild": "mkdir ./.cache && mv /app/.cache/puppeteer ./.cache"},
+    "heroku-postbuild": "npx puppeteer install --unsafe-perm=true --allow-root"},
   "dependencies": {
     "axios": "^0.27.2",
     "chance": "^1.1.11",
