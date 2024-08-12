@@ -1,6 +1,5 @@
 {
   "description": "",
-
   "scripts": {
     "start": "node index.js"},
   "dependencies": {
