@@ -2,7 +2,7 @@
   "description": "",
   "scripts": {
     "start": "node index.js",
-    "heroku-postbuild": "npm install puppeteer puppeteer-extra puppeteer-extra-plugin-stealth --unsafe-perm=true --allow-root && npx puppeteer browsers install chrome"  },
+     "heroku-postbuild": "npm install puppeteer-core chrome-aws-lambda puppeteer-extra puppeteer-extra-plugin-stealth --unsafe-perm=true --allow-root"},
   "dependencies": {
     "axios": "^0.27.2",
     "chance": "^1.1.11",
