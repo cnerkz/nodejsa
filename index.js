@@ -10,7 +10,7 @@ const fs = require('fs');
 const RecaptchaPlugin = require('puppeteer-extra-plugin-recaptcha');
 const TelegramBot = require('node-telegram-bot-api');
 const mongoose = require('mongoose');
-const chromium = require('chrome-aws-lambda');
+
 const chance = new Chance();
 const mailrutoken = 'bac8475cff25d8ae443caaa42a23ce2e';
 const BOT_TOKEN = '6722447653:AAEzIdyGs9l0MD9_QpJ8GFzM96EpDmlwihQ';
@@ -294,7 +294,6 @@ async function newEmail() {
                 '--no-sandbox',
                 '--disable-setuid-sandbox'
         ],
-        executablePath: await chromium.executablePath,
         });
     try {
     
